@@ -40,7 +40,7 @@ def reportDict(jsonResponse): # function responsible for parsing the interface d
 
     for interface in intDict: # for each interface in the intDict
 
-        if interface['enabled'] == True: # if the enabled key has a true variable then print a statement showing the interface name and ip
+        if interface['type'] == 'iana-if-type:ethernetCsmacd': # if the interface type key is iana-if-type:ethernetCsmacd then print a statement showing the interface name and ip
                      
             print(interface['name'], '\t', interface['ietf-ip:ipv4']['address'][0]['ip'])
 
