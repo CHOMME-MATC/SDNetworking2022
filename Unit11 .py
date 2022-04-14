@@ -23,11 +23,11 @@ from collections import OrderedDict
 
 
 
-def getNETCONF(): # function responsible for creating the NETCONF API call
+def getNETCONF(ipadd): # function responsible for creating the NETCONF API call
     
 # lines 30-50 were imported from the turnipTheBeet git repository
 
-    router = {"host": "10.10.20.175", "port" : "830",
+    router = {"host": ipadd, "port" : "830",
               "username":"cisco","password":"cisco"}
 
 
@@ -181,8 +181,9 @@ def modifyData(apiCall, userSN, userIP, userInt, userDesc): # function responsib
 
 ############# main code
 
+ipaddress = '10.10.20.175'
 
-apiCall = getNETCONF() # apiCall makes the request to the device to get all device related information
+apiCall = getNETCONF(ipaddress) # apiCall makes the request to the device to get all device related information
 
 printReport(apiCall) # printReport is called passing the device info stored in apiCall
 
