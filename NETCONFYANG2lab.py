@@ -161,11 +161,14 @@ xmlConfig = """<config xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns 
                 </native>
         </config>"""     
 
+
 askUser = userInput('\nWould you like to change attribuites of an interface? [Y or N]: ', ['y','n','Y','N'] )
 # the user is asked if they would like to make changes to any interfaces shown
 
+
 if askUser.lower() == 'n': # if the user doesnt want to make changes, a print statement shows no changes were made
     print('\nNo changes were made to the device.')
+
 
 
 if askUser.lower() == 'y': # if the user does want to make changes, the user will be asked for the interface they would like to change and the
